@@ -22,6 +22,14 @@ namespace Examen1PrograII
             return suma;
         }
 
+        public void ValidarNotas2(double suma) // Metodo para validar la suma de las notas parciales
+        {
+            if (suma>100 || suma<0)
+            {
+                throw new ArgumentOutOfRangeException("Fuera de rango en notas parciales");
+            }
+        }
+
         public double CalcularNotaFinal(double n1, double n2, double n3)
         {             
             double suma = n1 + n2 + n3;

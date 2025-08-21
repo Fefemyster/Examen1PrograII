@@ -27,8 +27,13 @@ try
         matricula.NotasParciales.Add(nota);
     }
 
+
     double notaFinal = matricula.CalcularNotaFinal();
-  
+
+
+    matricula.ValidarNotas2(notaFinal);
+
+
     Console.WriteLine($"EL estudiante {alumno.Nombre} ha sido matriculado en la asignatura {asignatura.NombreAsignatura} en el horario {asignatura.Horario} con el docente {asignatura.NombreDocente}.");
     Console.WriteLine($"El correo del estudiante es: {alumno.Email}");
     Console.WriteLine($"La nota final es: {notaFinal}");
@@ -40,6 +45,11 @@ catch (FormatException)
 {
     Console.WriteLine("Ingrese una nota valida");
 }
+catch (ArgumentOutOfRangeException ex)
+{
+    Console.WriteLine($"{ex.Message}");
+}
+
 
 
 Console.WriteLine();
