@@ -29,7 +29,7 @@ try
 
 
     double notaFinal = matricula.CalcularNotaFinal();
-
+    
 
     matricula.ValidarNotas2(notaFinal);
 
